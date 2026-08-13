@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bassirou Gueye — Écosystème de compétences</title>
+<meta name="description" content="Portefeuille de compétences interactif — BUT3 MMI Développement Web et Dispositifs Interactifs">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="canvas-container"></div>
+
+  <div id="intro-veil">
+    <div class="intro-content">
+      <span class="eyebrow">Portefeuille de compétences</span>
+      <h1>L'écosystème de<br>Bassirou Gueye</h1>
+      <p>BUT3 Métiers du Multimédia et de l'Internet — Parcours Développement Web &amp; Dispositifs Interactifs</p>
+      <button id="enter-btn">Explorer l'écosystème</button>
+    </div>
+  </div>
+
+  <header id="top-bar">
+    <div class="brand">
+      <span class="brand-name">Bassirou Gueye</span>
+      <span class="brand-role">BUT3 MMI — DWDI</span>
+    </div>
+  </header>
+
+  <div id="instructions">
+    <span class="instr-item"><span class="instr-icon">↻</span> Glissez pour faire tourner le globe</span>
+    <span class="instr-sep">·</span>
+    <span class="instr-item"><span class="instr-icon">●</span> Cliquez sur un point pour découvrir l'AC</span>
+  </div>
+
+  <nav id="legend">
+    <span class="legend-title">Catégories</span>
+    <div id="legend-list"><!-- généré depuis data.js (CATEGORY_META) --></div>
+  </nav>
+
+  <div id="detail-overlay">
+    <div class="modal-card">
+      <button id="close-panel" aria-label="Fermer">✕</button>
+      <div class="detail-image-wrap">
+        <img class="detail-image" alt="" />
+        <div class="detail-image-placeholder">
+          <span class="placeholder-icon">🖼</span>
+          <span class="placeholder-text">Image à venir</span>
+        </div>
+      </div>
+      <div id="detail-content">
+        <span class="detail-code"></span>
+        <h2 class="detail-title"></h2>
+        <div class="detail-block detail-realisation">
+          <span class="block-label">Réalisation</span>
+          <p class="block-text"></p>
+        </div>
+        <div class="detail-block detail-part">
+          <span class="block-label">Ma part dans le travail</span>
+          <p class="block-text"></p>
+        </div>
+        <div class="detail-block detail-justification">
+          <span class="block-label">En quoi cela illustre la compétence</span>
+          <p class="block-text"></p>
+        </div>
+        <div class="detail-block detail-bilan">
+          <span class="block-label">Bilan &amp; progression</span>
+          <p class="block-text"></p>
+        </div>
+        <p class="detail-empty">Élément à compléter avec le tuteur / la tutrice.</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="node-tooltip"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
