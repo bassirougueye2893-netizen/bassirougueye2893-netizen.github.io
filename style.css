@@ -253,18 +253,23 @@ html, body {
 .detail-image-wrap {
   position: relative;
   width: 100%;
-  height: 220px;
+  max-height: 60vh;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-top-left-radius: 22px;
   border-top-right-radius: 22px;
   background: linear-gradient(160deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01));
   border-bottom: 1px solid var(--line);
 }
+.detail-image-wrap:not(.has-image) { height: 220px; }
 .detail-image {
   display: none;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  max-height: 60vh;
+  object-fit: contain;
 }
 .detail-image.visible { display: block; }
 .detail-image-placeholder {
