@@ -10,7 +10,7 @@ const COMPETENCY_DATA = [
   // ---- Compétence de spécialité : Développer un écosystème numérique complexe ----
   {
     code: "AC33.01",
-    image: null,
+    image: "assets/web-semantique.jpg",
     category: "specialite",
     title: "Développer à l'aide d'un framework de développement côté client",
     realisation: "Projet Web sémantique",
@@ -20,7 +20,7 @@ const COMPETENCY_DATA = [
   },
   {
     code: "AC33.02",
-    image: null,
+    image: "assets/web-semantique.jpg",
     category: "specialite",
     title: "Développer à l'aide d'un framework de développement côté serveur",
     realisation: "Projet Web sémantique",
@@ -30,7 +30,7 @@ const COMPETENCY_DATA = [
   },
   {
     code: "AC33.03",
-    image: null,
+    image: "assets/unity-parcours-3d.jpg",
     category: "specialite",
     title: "Développer des dispositifs interactifs sophistiqués",
     realisation: "Unity — Jeu de parcours 3D",
@@ -40,7 +40,7 @@ const COMPETENCY_DATA = [
   },
   {
     code: "AC33.04",
-    image: null,
+    image: "assets/flutter-japon.jpg",
     category: "specialite",
     title: "Concevoir et développer des composants logiciels, plugins ou extensions",
     realisation: "Application Flutter — Guide touristique du Japon",
@@ -50,7 +50,7 @@ const COMPETENCY_DATA = [
   },
   {
     code: "AC33.05",
-    image: null,
+    image: "assets/web-semantique.jpg",
     category: "specialite",
     title: "Maîtriser l'hébergement et le déploiement d'applications",
     realisation: "Projet Web sémantique — hébergement Hostinger",
@@ -62,7 +62,7 @@ const COMPETENCY_DATA = [
   // ---- Compétence transversale : Entreprendre dans le secteur du numérique ----
   {
     code: "AC35.01",
-    image: null,
+    image: "assets/appli-gestion-repas.jpg",
     category: "transversale",
     title: "Piloter un produit, un service ou une équipe",
     realisation: "Entreprenariat — Application de gestion de repas",
@@ -72,7 +72,7 @@ const COMPETENCY_DATA = [
   },
   {
     code: "AC35.02",
-    image: null,
+    image: "assets/fake-album-repository.jpg",
     category: "transversale",
     title: "Maîtriser la qualité en projet Web ou multimédia",
     realisation: "Application musicale — Tests unitaires",
@@ -82,7 +82,7 @@ const COMPETENCY_DATA = [
   },
   {
     code: "AC35.03",
-    image: null,
+    image: "assets/appli-gestion-repas.jpg",
     category: "transversale",
     title: "Concevoir un projet d'entreprise innovante en définissant le nom, l'identité, la forme juridique et le ton de la marque",
     realisation: "Entreprenariat — Application de gestion de repas interactive",
@@ -92,7 +92,7 @@ const COMPETENCY_DATA = [
   },
   {
     code: "AC35.04",
-    image: null,
+    image: "assets/nach.jpg",
     category: "transversale",
     title: "Défendre un projet de manière convaincante",
     realisation: "Entreprenariat — Nach",
@@ -104,7 +104,7 @@ const COMPETENCY_DATA = [
   // ---- Compétences métiers et soft skills en entreprise (stage Kilifa Consulting) ----
   {
     code: "CM1",
-    image: null,
+    image: "assets/odoo-vs-dolibarr.jpg",
     category: "metiers",
     title: "Analyser et comparer des solutions logicielles pour répondre à un besoin client",
     realisation: "Étude comparative Odoo vs Dolibarr (semaine 1 — Stage Kilifa Consulting)",
@@ -114,7 +114,7 @@ const COMPETENCY_DATA = [
   },
   {
     code: "CM2",
-    image: null,
+    image: "assets/refonte-site-kilifa.jpg",
     category: "metiers",
     title: "Refondre un site web pour un client en autonomie",
     realisation: "Refonte du site du musée du Mouridisme et du site de Kilifa Consulting (semaines 2-3 — Stage Kilifa Consulting)",
