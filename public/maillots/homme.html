@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Maillot R2A Homme à 30 €">
+  <title>Maillot R2A Homme</title>
+  <link rel="stylesheet" href="../assets/css/00-tokens.css">
+  <link rel="stylesheet" href="../assets/css/10-base.css">
+  <link rel="stylesheet" href="../assets/css/20-components.css">
+  <link rel="stylesheet" href="../assets/css/30-pages.css">
+  <link rel="stylesheet" href="../assets/css/40-boutique.css">
+  <link rel="stylesheet" href="../assets/css/90-responsive.css">
+</head>
+<body data-category="homme">
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="../index.html"><img src="../assets/images/brand/r2a-gold.png" alt="R2A"></a>
+      <nav class="nav-links">
+        <a href="../index.html#presentation">Présentation</a>
+        <a href="../boutique.html">Boutique</a>
+        <a href="../index.html#instagram">Vidéos Instagram</a>
+      </nav>
+      <div class="nav-actions"><button class="btn btn-dark" id="cartBtn">Panier <span id="cartCount">0</span></button></div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="page-head">
+      <div class="breadcrumbs"><a href="../index.html">Accueil</a> / Maillot Homme</div>
+      <div class="kicker">Boutique R2A</div>
+      <h1>Maillot Homme</h1>
+      <p class="section-copy">Tailles disponibles de XS à 4XL. Prix public : <strong>30 €</strong>.</p>
+    </section>
+    <div id="productList"></div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <img src="../assets/images/brand/road2yourambition.png" alt="R2A" style="width:170px;max-width:100%;margin-bottom:16px">
+        <div class="footer-note">R2A • Ton ambition, ton chemin, ta réussite.</div>
+      </div>
+      <div class="footer-links"><strong>Navigation</strong><a href="../index.html">Accueil</a><a href="../legal/mentions-legales.html">Mentions légales</a></div>
+      <div class="footer-links"><strong>Catégories</strong><a href="./enfant.html">Enfant</a><a href="./homme.html">Homme</a><a href="./femme.html">Femme</a></div>
+    </div>
+  </footer>
+
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <aside class="cart-drawer" id="cartDrawer">
+    <div class="row"><h3 style="margin:0">Ton panier</h3><button class="btn btn-small btn-outline" id="closeCart">Fermer</button></div>
+    <div id="cartItems" class="cart-items"></div>
+    <div class="promo-box"><input id="promoInput" class="input" placeholder="Code promo secret"><button id="applyPromo" class="btn btn-primary btn-small">Appliquer</button></div>
+    <div id="promoStatus" class="notice-small">Aucun code promo appliqué</div>
+    <div class="list-item">
+      <div class="row"><span>Sous-total</span><strong id="cartSubtotal">0,00 €</strong></div>
+      <div class="row"><span>Réduction</span><strong id="cartDiscount">-0,00 €</strong></div>
+      <div class="row"><span>Total</span><strong id="cartTotal">0,00 €</strong></div>
+    </div>
+    <button class="btn btn-primary" id="checkoutBtn">Commander via Instagram</button>
+  </aside>
+
+  <script src="../assets/js/site-config.js"></script>
+  <script src="../assets/js/data/catalog.js"></script>
+  <script src="../assets/js/boutique.js"></script>
+  <script src="../assets/js/app.js"></script>
+</body>
+</html>

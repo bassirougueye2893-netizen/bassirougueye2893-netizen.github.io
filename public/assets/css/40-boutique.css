@@ -1,0 +1,45 @@
+/* ===== Tabs génériques (nav ancrée + onglets boutique) ===== */
+.tabbar{display:flex;gap:8px;flex-wrap:wrap;padding:6px;background:#0d0d0d;border:1px solid #242424;border-radius:999px;width:fit-content;max-width:100%}
+.tabbar button{appearance:none;border:0;background:transparent;color:var(--muted);font-weight:800;letter-spacing:.02em;padding:12px 22px;border-radius:999px;cursor:pointer;transition:background .2s ease,color .2s ease;font-size:.95rem;white-space:nowrap}
+.tabbar button.active{background:linear-gradient(180deg,var(--gold-2),var(--gold));color:#140d02;box-shadow:0 10px 24px rgba(201,154,69,.28)}
+.tabbar button:not(.active):hover{color:var(--text)}
+
+.site-header .nav-links a{position:relative}
+.site-header .nav-links a.active{color:var(--gold-2)}
+.site-header .nav-links a.active::after{content:"";position:absolute;left:0;right:0;bottom:-8px;height:2px;background:var(--gold-2)}
+
+/* ===== Effet 3D tilt (cartes, hero) ===== */
+.tilt{position:relative;transform-style:preserve-3d;perspective:1200px;transition:transform .35s cubic-bezier(.2,.8,.2,1);will-change:transform}
+.tilt-inner{transform-style:preserve-3d}
+.tilt .shine{position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at var(--mx,50%) var(--my,30%),rgba(227,191,115,.22),transparent 55%);opacity:0;transition:opacity .3s ease;border-radius:inherit}
+.tilt:hover .shine{opacity:1}
+
+/* ===== Flip produit (recto/verso en 3D) ===== */
+.flip-stage{perspective:1600px}
+.flip-card{position:relative;width:100%;aspect-ratio:4/5;transform-style:preserve-3d;transition:transform .7s cubic-bezier(.2,.8,.2,1)}
+.flip-card.flipped{transform:rotateY(180deg)}
+.flip-face{position:absolute;inset:0;backface-visibility:hidden;border-radius:22px;overflow:hidden;background:linear-gradient(180deg,#141414,#0d0d0d);display:grid;place-items:center}
+.flip-face img{width:100%;height:100%;object-fit:contain;padding:18px}
+.flip-face--back{transform:rotateY(180deg)}
+.flip-hint{margin-top:12px;display:flex;align-items:center;gap:8px;color:var(--muted);font-size:.85rem;justify-content:center}
+.flip-hint svg{width:16px;height:16px}
+
+/* ===== Boutique : grille catégories + fiches ===== */
+.boutique-hero{padding:48px 0 18px;text-align:center}
+.boutique-hero .tabbar{margin:0 auto}
+.boutique-panel{display:none}
+.boutique-panel.active{display:block}
+
+/* ===== Présentation (hero 3D léger) ===== */
+.presentation-badge{position:absolute;top:18px;right:18px;background:rgba(9,9,9,.75);backdrop-filter:blur(6px);border:1px solid rgba(227,191,115,.35);color:var(--gold-2);font-size:.75rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:8px 14px;border-radius:999px}
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:26px}
+.stat-row div{background:#101010;border:1px solid #242424;border-radius:16px;padding:16px;text-align:center}
+.stat-row strong{display:block;font-size:1.7rem;color:var(--gold-2);letter-spacing:-.02em}
+.stat-row span{font-size:.78rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+
+@media (max-width:760px){
+  .tabbar{width:100%;justify-content:center}
+  .tabbar button{padding:10px 14px;font-size:.85rem}
+  .stat-row{grid-template-columns:1fr}
+  .tilt{transform:none !important}
+}

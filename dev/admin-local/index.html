@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Admin caché — R2A</title>
+  <link rel="stylesheet" href="../../public/assets/css/00-tokens.css">
+  <link rel="stylesheet" href="../../public/assets/css/10-base.css">
+  <link rel="stylesheet" href="../../public/assets/css/20-components.css">
+  <link rel="stylesheet" href="../../public/assets/css/30-pages.css">
+  <link rel="stylesheet" href="../../public/assets/css/90-responsive.css">
+  <link rel="stylesheet" href="./admin.css">
+</head>
+<body>
+  <div class="container admin-wrap">
+    <div id="adminLogin" class="admin-login">
+      <div class="kicker">OUTIL LOCAL — NE PAS DÉPLOYER</div>
+      <h1 style="margin-top:8px">Administration R2A</h1>
+      <p class="section-copy">Cet éditeur local est volontairement hors du dossier public Cloudflare. Il sert uniquement aux tests et ne constitue pas un back-office sécurisé. Entre le mot de passe admin pour gérer les articles, leur stock, les codes promo et les liens Instagram.</p>
+      <div class="form-grid">
+        <input type="password" id="adminPassword" class="input" placeholder="Mot de passe admin">
+        <button class="btn btn-primary" id="loginBtn">Entrer</button>
+        <div class="notice-small">Le mot de passe n’est pas affiché ni stocké en clair dans cette page.</div>
+      </div>
+    </div>
+
+    <div id="adminPanel" class="admin-panel" style="display:none">
+      <div class="row"><div><div class="kicker">Back office</div><h1 style="margin:6px 0 0">Gestion du site</h1></div><button id="logoutBtn" class="btn btn-outline">Se déconnecter</button></div>
+      <div class="admin-grid">
+        <section class="admin-card">
+          <h3>Ajouter un article</h3>
+          <form id="productForm" class="form-grid">
+            <input class="input" name="name" placeholder="Nom du produit" required>
+            <select class="selector" name="category"><option value="enfant">Enfant</option><option value="homme">Homme</option><option value="femme">Femme</option></select>
+            <input class="input" name="price" type="number" value="30" min="0" step="0.01">
+            <input class="input" name="stock" type="number" value="20" min="0" step="1" placeholder="Stock disponible">
+            <input class="input" name="sizes" placeholder="Tailles séparées par des virgules" value="S,M,L,XL">
+            <textarea class="input" name="description" placeholder="Description" rows="4"></textarea>
+            <input class="input" id="productImage" type="file" accept="image/*">
+            <input class="input" name="imageUrl" placeholder="ou URL d'image">
+            <button class="btn btn-primary">Ajouter l’article</button>
+          </form>
+          <div id="productsList" class="list"></div>
+        </section>
+        <section class="admin-card">
+          <h3>Codes promo secrets</h3>
+          <form id="promoForm" class="form-grid">
+            <input class="input" name="code" placeholder="Code promo" required>
+            <select class="selector" name="type"><option value="percent">Pourcentage</option><option value="fixed">Montant fixe</option></select>
+            <input class="input" name="value" type="number" min="0" step="0.01" placeholder="Valeur" required>
+            <button class="btn btn-primary">Ajouter le code</button>
+          </form>
+          <div id="promosList" class="list"></div>
+        </section>
+        <section class="admin-card">
+          <h3>Vidéos Instagram</h3>
+          <form id="reelForm" class="form-grid">
+            <input class="input" name="title" placeholder="Titre de la vidéo">
+            <input class="input" name="url" placeholder="Lien Reel Instagram (source)">
+            <input class="input" name="video" placeholder="Lien MP4 direct (recommandé pour un lecteur 100% propre)">
+            <button class="btn btn-primary">Ajouter le Reel</button>
+          </form>
+          <div class="notice-small">Pour l’affichage le plus propre : mets un lien MP4 direct dans « Lien MP4 ». Si tu mets seulement le Reel Instagram, le site l’affiche dans un cadre recadré sans le gros bloc de commentaires.</div>
+          <div id="reelsList" class="list"></div>
+        </section>
+      </div>
+    </div>
+  </div>
+  <script src="../../public/assets/js/data/catalog.js"></script>
+  <script>R2A_DATA.ADMIN_PASSWORD_HASH="7b01ee0dadea34557bfa1969c0fcf013394eef74041af58dbef4b25089b98ed1"; R2A_DATA.DEFAULT_PROMOS=[]; R2A_DATA.STORAGE_KEYS.admin="r2a_admin_logged"; R2A_DATA.STORAGE_KEYS.promos="r2a_promos";</script>
+  <script src="./js/admin-local.js"></script>
+</body>
+</html>

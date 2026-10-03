@@ -1,0 +1,70 @@
+.site-header{position:sticky;top:0;z-index:30;background:rgba(7,7,7,.94);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.05)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:18px;min-height:82px}
+.brand{display:flex;align-items:center;gap:14px;min-width:0}
+.brand img{width:78px;max-width:none;height:auto;filter:drop-shadow(0 3px 10px rgba(201,154,69,.18))}
+.nav-links{display:flex;gap:22px;flex-wrap:wrap;font-weight:600;color:#d0d0ca}
+.nav-links a:hover{color:var(--gold-2)}
+.nav-actions{display:flex;align-items:center;gap:10px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 18px;border-radius:999px;border:1px solid transparent;font-weight:800;transition:.2s ease}
+.btn:hover{transform:translateY(-1px)}
+.btn-primary{background:linear-gradient(135deg,var(--gold-2),var(--gold));color:#111}
+.btn-dark{background:#121212;border-color:#2e2e2e;color:#fff}
+.btn-outline{background:transparent;border-color:#3a3a3a;color:#fff}
+.btn-small{padding:10px 14px;font-size:.92rem}
+
+
+.reels-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:22px;align-items:start}
+.reel-card{position:relative;background:transparent;border:0;border-radius:20px;padding:0;overflow:hidden;box-shadow:none}
+.reel-ig-shell,.reel-player-shell{position:relative;width:100%;aspect-ratio:9/16;border-radius:20px;overflow:hidden;background:transparent;box-shadow:0 18px 50px rgba(0,0,0,.28);isolation:isolate}
+/* L'iframe Instagram est volontairement zoomée et rognée : seule la zone vidéo reste visible. */
+.reel-ig-embed{position:absolute;left:-17%;top:-150px;width:134%;height:1260px;border:0;background:transparent;transform:scale(1.28);transform-origin:top center}
+.reel-native-video{width:100%;height:100%;object-fit:cover;background:transparent}
+.reel-player-controls{position:absolute;left:10px;right:10px;bottom:10px;display:flex;justify-content:flex-end;gap:8px;z-index:4}
+.reel-control,.reel-expand-overlay{width:40px;height:40px;border:1px solid rgba(255,255,255,.28);border-radius:999px;background:rgba(8,8,8,.68);color:#fff;backdrop-filter:blur(7px);font-size:1rem;display:grid;place-items:center}
+.reel-control:hover,.reel-expand-overlay:hover{background:rgba(201,154,69,.9);color:#080808}
+.reel-expand-overlay{position:absolute;right:10px;bottom:10px;z-index:6}
+.reel-empty{padding:28px;text-align:center;color:var(--muted);border:1px dashed #444;border-radius:18px;background:#0d0d0d}
+.reel-modal{position:fixed;inset:0;z-index:150;display:none;place-items:center;padding:18px}
+.reel-modal.open{display:grid}
+.reel-modal-backdrop{position:absolute;inset:0;background:rgba(0,0,0,.88);backdrop-filter:blur(7px)}
+.reel-modal-panel{position:relative;z-index:2;width:min(470px,94vw);max-height:94vh;background:transparent;border:0;border-radius:24px;padding:0;box-shadow:none}
+.reel-modal-panel .reel-ig-shell,.reel-modal-panel .reel-player-shell{max-height:90vh;margin:auto;box-shadow:0 28px 90px rgba(0,0,0,.5)}
+.reel-modal-panel .reel-ig-embed{top:-152px;left:-16%;width:132%;height:1320px;transform:scale(1.26)}
+.reel-modal-close{position:absolute;right:-13px;top:-13px;z-index:10;width:42px;height:42px;border-radius:50%;border:1px solid #3b3b3b;background:#111;color:#fff;font-size:1.7rem;line-height:1}
+body:has(.reel-modal.open){overflow:hidden}
+
+/* Cart drawer — restored after the V21 stylesheet split. */
+body > .cart-drawer{
+  position:fixed;
+  top:0;
+  right:-430px;
+  width:min(420px,100vw);
+  height:100vh;
+  background:#090909;
+  border-left:1px solid #262626;
+  z-index:90;
+  padding:18px;
+  transition:right .25s ease;
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+  box-shadow:-20px 0 60px rgba(0,0,0,.4);
+}
+body > .cart-drawer.open{right:0}
+body > .cart-overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.55);
+  z-index:80;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .2s ease;
+}
+body > .cart-overlay.open{opacity:1;pointer-events:auto}
+.cart-items{flex:1;overflow:auto;display:grid;gap:10px;min-height:0}
+.cart-item{padding:12px;border:1px solid #242424;border-radius:14px;background:#111}
+.cart-drawer .row{display:flex;justify-content:space-between;gap:16px;align-items:center}
+.cart-drawer .muted{color:var(--muted)}
+.cart-drawer .promo-box{display:grid;grid-template-columns:1fr auto;gap:10px}
+.cart-drawer .list-item{padding:12px;border-radius:14px;background:#121212;border:1px solid #292929}
+.cart-drawer .notice-small{font-size:.9rem;color:#d1cab6}
